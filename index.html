@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hello,vue.js</title>
+  <link rel="stylesheet" href="CSS/style.css">
+</head>
+
+<body>
+  <div id="app">
+    <!-- 算出プロパティを使用しない場合：長くなる。繰り返す場合は複数必要 -->
+   <p>{{message.split('').reverse().join('')}}</p>
+   <p>{{message.split('').reverse().join('')}}</p>
+   <!-- 算出プロパティを使用する場合 -->
+   <p>{{reversedMessage}}</p>
+   <p>{{reversedMessage}}</p>
+   <!-- 算出プロパティとメソッドの比較 -->
+   <p>{{reversedMessageMethod()}}</p>
+   <!-- getterとsetter -->
+   <p>bace price:<input type="text" v-model="basePrice"></p>
+   <p>tax included price:<input type="text" v-model="taxIncludedPrice"></p>
+   <!-- 4,methodsとの違い③算出プロパティのキャッシュ -->
+   <h2>Computed</h2>
+   <ol>
+     <li>{{computedNumber}}</li>
+     <li>{{computedNumber}}</li>
+   </ol>
+   <h2>Methods</h2>
+   <ol>
+     <li>{{ methodsNumber() }}</li>
+     <li>{{ methodsNumber() }}</li>
+   </ol>
+
+
+
+   <!-- デバック用 -->
+   <!-- <pre>{{$data}}</pre> -->
+
+  <!-- コンポーネントを出力する場合 -->
+  <!-- <hello-component></hello-component> -->
+  </div>
+  <!-- vie.jsのCDNを先に読み込む。URLは公式ページから -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
